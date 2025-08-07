@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>CryptoDash</h2>
+
+  <div class="selectors">
+    <div>
+      <label>Moeda 1</label>
+      <select [(ngModel)]="coin1" (change)="mudarMoeda1()">
+        @for (item of moedas; track $index) {
+        <option [value]="item">{{ item }}</option>
+        }
+      </select>
+    </div>
+
+    <div>
+      <label>Moeda 2</label>
+      <select [(ngModel)]="coin2" (change)="mudarMoeda2()">
+        @for (item of moedas; track $index) {
+        <option [value]="item">{{ item }}</option>
+        }
+      </select>
+    </div>
+  </div>
+
+  <div class="precos">
+    <p>
+      {{ coin1 }}: <strong>{{ price1() }}</strong>
+    </p>
+    <p>
+      {{ coin2 }}: <strong>{{ price2() }}</strong>
+    </p>
+  </div>
+
+  <button (click)="toggleRealtime()">
+    {{ realtime ? "Parar gráfico em tempo real" : "Ver gráfico em tempo real" }}
+  </button>
+
+  <div class="chart-container">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="'bar'"
+    ></canvas>
+  </div>
+</div>
