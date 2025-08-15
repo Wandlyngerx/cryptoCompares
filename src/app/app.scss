@@ -80,3 +80,45 @@ canvas {
   border-radius: 8px;
   background: #fff;
 }
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .selectors {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .precos {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.7rem 0;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .precos {
+    font-size: 0.9rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+}
